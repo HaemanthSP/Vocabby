@@ -86,7 +86,7 @@ We gone through many of them to compare the advantages and disadvantages of each
 The study by ~\citet{chen2008personalized} presents a personalised mobile application for
 learning English vocabulary based on learning memory cycle and item response theory.
 Which helps in selecting appropriate vocabulary according to individual.
-After that this group also presented another paper for English vocabulary
+After that, this group also presented another paper for English vocabulary
 learning by creating mobile application which notifies the user about current
 English news but according to the reading abilities of user. Which they found out
 by using fuzzy item response theory. This application helps in improving English reading ability to users.
@@ -113,7 +113,7 @@ according to level of knowledge or interest. This type of system also helps to r
 \subsection{Building vocabulary}
 The raw input text from the learner is structured into a meaningful form that is
 convenient for vocabulary learning. As we use some statistical feature to
-process the learner text, the quality of structured data is directly
+process the learner's text, the quality of structured data is directly
 proportional to the size of the learner text. The process of building the
 vocabulary with respect to the learner text is independent of the learner. We focus
 to capture the entire vocabulary structure of the text. So any new learner can
@@ -134,10 +134,11 @@ pair of word and its POS tag.
 \begin{center}\emph{(word, POS tag)}\end{center}
 
 \subsubsection{Sentences}
-All the sentences in which the candidate words occur are cleaned and mapped to
-the corresponding candidate word. So each candidate word is mapped to all the sentences
-in which it occur and also each sentence is mapped to all the candidate
-words it contains.
+
+The sentences in the learner text are the key resources for all the activities in our application.
+So it has to be collected and organised well. The sentences are pre-processed and filtered to remove the bad ones.
+Each sentence instance maintains a soft link to its neighboring sentences to preserve the context.
+Also the sentence instance are mapped to all the candidate words occur in it.
 
 \subsubsection{Complexity}
 There are lot of methods to measure the complexity of a word. We choose frequency.
@@ -216,7 +217,7 @@ tracking each word in the vocabulary individually.
   \subfloat[neighbors of \emph{analysis}]{
     \includegraphics[width=.4\linewidth]{network_4}
   }
-  \caption{A figure with two sub-figures}
+  \caption{Neighborhood in the network}
   \label{fig:network}
 \end{figure*}
 
@@ -381,14 +382,18 @@ The next screen is the list of 20 words that will be used in activities. In the 
 
 
 \section{Future Works}
+We have shortlisted some quicker extension of our existing system and future research in this direction. 
 The system has limitation on operating on the words that does not have a learned
-representation on the vector space. Which could be rectified by learning a
-custom word vector specific to the domain. This feature could create new use case
-like a tool to learn jargon specifics to a new domain.
+representation in the vector space. Which could be rectified by learning a
+custom word vector representation specific to a domain. This feature could create new use case
+for this tool to learn jargon specifics to a new domain.
 
-Teaching the word in a session.
-Control over the complexity (tuneable complexity)
-Tracking words at learner level across books (to have a warm start for new book)
+Introducing a dedicated session to teach new words before the activities would be beneficial.
+In addition to the current approach of optimisation for critical learning zones in the graph,
+dynamically optimizing for the word complexity would make the application more engaging.
+Also one other important extension would be to carry forward the learner's vocabulary knowledge across books.
+This could potentially helps the application to have a warm start in a new book. Which eventually
+aid in narrowing down to the critical learning zones faster.
 
 On the user interface mobile application can used to attract for learners. The number activity types are limited for now but future work can be implementation of other activity types. Currently this system is one learner limited but after implementation of login screen and maintaining the database of learners with sessions can also be a helpful feature. Use of text to speech can improve learner's pronunciation. 
 
