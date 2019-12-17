@@ -106,7 +106,7 @@ They adopted a dependency grammar link for this model.
 
 But in any of research learner is not able to learn vocabulary from uploaded text.
 This is the problem that we overcome in our system so that learner can use own text
-according to level of knowledge or interest. This type of system also helps to reduce biased learning mechanisms.
+according to level of knowledge or interest. This type of system also helps to reduce subjective selection of words by developer. 
 
 \section{Our application}
 
@@ -243,6 +243,8 @@ of different learners on the same book.
 \subsubsection{Bookshelf}
 All such processed book are organized in multiple bookshelves specific to each
 domain similar to the gutenberg project\footnote{\url{http://www.gutenberg.org}}.
+Figure 6 shows the UI of library page in which preloaded books can be used for 
+activities without processing that book again.
 
 \subsection{Models}
 In this work we maintain multiple models to track and update different aspect
@@ -260,7 +262,8 @@ For each book the learner selects, a tutor instance will be created. The main
 activities of the tutor are to design a learning session, evaluate the
 performance and track the mastery level of the learner w.r.t all the vocabulary
 in the book. Then again generate a new session based on the updated mastery
-levels in the network.
+levels in the network. Figure 7 shows the UI to in which learner can select the word 
+complexity according to knowledge level. By default it is ?Average?.
 
 \textbf{Mastery Score:} The value ranges between 0 and 1. Initially it is
 assigned to 0.5 to indicate the uncertainty. Based on the performance of the
@@ -298,13 +301,12 @@ nature of the node.
 Since our motive is to reduce the effort for content creation. We generate the
 activities on the fly. In this work we generate two type of activities. 
 
-\textbf{fit to context:} The learner is prompted to complete 3-4 incomplete
+\textbf{fit to context:} As we can see in  Figure 3, One of activity in which learner has to select one correct answer that satisfies the all given three sentences. The learner is prompted to complete 3-4 incomplete
 sentences with one among the given list of word suggestions. The options are
 chosen to be contextually tight to improve the quality of the activity and
 learning outcome.
 
-\textbf{scrambled word:} The learner is prompted to come up with a word from the
-set of characters to complete an incomplete sentence. The words with word length
+\textbf{scrambled word:}  Figure 4 showing an example of this type of activity in which learner is given a sentence with scrambled characters as options. Learner has to rearrange them to make correct word that fits that sentence.  The learner is prompted to come up with a word from the set of characters to complete an incomplete sentence. The words with word length
 less than 6 characters are allowed to generate this activity. Since the larger
 answer words makes it more ambiguous for the learner to solve.
 
@@ -333,17 +335,18 @@ answer word to make all the distractors coherent.
 \begin{figure}
 \begin{tcbraster}[raster columns=1, enhanced, blankest]
 \tcbincludegraphics{1}
-\caption{One of activity in which learner has to select one correct answer that satisfies the all given three sentences}
+\label{fig:image1}
+\caption{One of activity type}
 
 \tcbincludegraphics{8}
-\caption{This is the another type of activity in which learner is given a sentence with scrambled characters as options. Learner has to rearrange them to make correct word that fits that sentence.}
+\caption{Other activity type}
 
 \tcbincludegraphics{5}
-\caption{This page shows the stats of uploaded book. Number of families, total number of words, most frequent 20 words.}
+\caption{Stats user interface}
 
 
 \tcbincludegraphics{4}
-\caption{This is the library page in which preloaded books can be used for activities without processing that book again.}
+\caption{Book shelf}
 
 \end{tcbraster}
 \end{figure}
@@ -353,17 +356,17 @@ answer word to make all the distractors coherent.
 \begin{figure}
 \begin{tcbraster}[raster columns=1, enhanced, blankest]
 \tcbincludegraphics{7}
-\caption{Learner can select the word complexity according to knowledge level. By default it is "Average".}
+\caption{Knowledge level selector}
 
 
 \tcbincludegraphics{6}
-\caption{This is the list of words that will be used for creating activities. Learner can go through these words for getting insight of words.}
+\caption{words to be used in exercise}
 
 \tcbincludegraphics{3}
-\caption{If learner gave correct answer this notification bar will be shown on screen with button to proceed for next question. In the meantime learner can also see the progress by progress bar above activity.}
+\caption{Correct answer notification}
 
 \tcbincludegraphics{2}
-\caption{If learner gave wrong answer, this type of notification bar will be shown with another sentence that includes the selected option for actual activity to show how can we use the selected option in future activities.}
+\caption{Wrong answer notification}
 \end{tcbraster}
 \end{figure}
 
@@ -376,8 +379,7 @@ Our plan for system was to create interactive and single page application so we 
 
 
 \subsection{System Flow}
-The first screen of system is the form in which learner will fill some details like name of author, name of book, publisher, etc. and also upload the book. The next step is to process the book and assign an ID for library reference. Learner can see the stats of book with details like number of families, total number of words, most frequent 20 words. 
-The next screen is the list of 20 words that will be used in activities. In the mean time learner can click on various menu items like "Books" for opening library and changing the book or learner can change the complexity level of words by clicking on profile name. The next screen after stats is activity page. There are currently two types of activities which are coming from backend randomly. We are keeping the progress of learner and showing for motivation and also showing learner appropriate error or success message and also giving correct explanation in the case of wrong answer selected. 
+The first screen of system is the form in which learner will fill some details like name of author, name of book, publisher, etc. and also upload the book. The next step is to process the book and assign an ID for library reference. Learner can see the stats of book. Figure 5 is showing the stats of uploaded book. Number of families, total number of words, most frequent 20 words. Figure 8 is the UI of next screen showing the list of words that will be used for creating activities. Learner can go through these words for getting insight of words. In the mean time learner can click on various menu items like "Books" for opening library and changing the book or learner can change the complexity level of words by clicking on profile name. The next screen after stats is activity page. There are currently two types of activities which are coming from backend randomly. We are keeping the progress of learner and showing for motivation and also showing learner appropriate error or success message and also giving correct explanation in the case of wrong answer selected. Figure 9 and 10 shows the UI in case of wrong answer or right answer for particular question. If learner gave correct answer this notification bar will be shown on screen with button to proceed for next question. In the meantime learner can also see the progress by progress bar above activity and If learner gave wrong answer, this type of notification bar will be shown with another sentence that includes the selected option for actual activity to show how can we use the selected option in future activities.
 
 
 \section{Future Works}
